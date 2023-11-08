@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--
+        font : 사용할 글꼴의 리소스 위치
+        fontStyle : 해당 글꼴의 스타일
+        fontWeight : 글꼴의 굵기
+    -->
+    <!-- 스위트 -->
+    <!--light-->
+    <font
+        android:font="@font/suite_light"
+        android:fontStyle="normal"
+        android:fontWeight="400" />
+    <!--bold-->
+    <font
+        android:font="@font/suite_bold"
+        android:fontStyle="normal"
+        android:fontWeight="400" />
+    <!-- 클로버 -->
+    <!--regular-->
+    <font
+        android:font="@font/yclover_regular"
+        android:fontStyle="normal"
+        android:fontWeight="400" />
+    <!--bold-->
+    <font
+        android:font="@font/yclover_bold"
+        android:fontStyle="normal"
+        android:fontWeight="400" />
+</font-family>

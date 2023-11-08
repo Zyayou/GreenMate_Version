@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/outputarea"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:id="@+id/back"
+        android:background="@android:color/transparent"/>
+
+    <Spinner
+        android:layout_width="340dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="center"
+        android:entries="@array/state"
+        android:drawSelectorOnTop="true"
+        android:textColor="@color/white"
+        android:id="@+id/arer_state"/>
+
+
+    <Spinner
+        android:layout_width="340dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="center"
+        android:entries="@array/city_gb"
+        android:drawSelectorOnTop="true"
+        android:tooltipText="선택"
+        android:textColor="@color/white"
+        android:id="@+id/area_city" />
+
+    <ImageView
+        android:id="@+id/outimage"
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="55dp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:id="@+id/are_URL" />
+
+    <Button
+        android:id="@+id/goplace"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:visibility="invisible"
+        android:background="@android:color/transparent"/>
+    <!-- 비져빌리티 추가됨-->
+
+
+
+</LinearLayout>

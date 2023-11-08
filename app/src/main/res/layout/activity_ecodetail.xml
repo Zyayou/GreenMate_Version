@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EcodetailActivity"
+    android:background="@drawable/m_ecodetailback">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/delete_button"
+
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:layout_alignParentLeft="true"
+
+            android:background="@drawable/loginbutton2"
+            android:text="←"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageview"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/redblack"
+            android:src="@drawable/m_rogo" />
+
+        <ScrollView
+            android:id="@+id/detailscroll"
+            android:contentDescription="no"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="90dp"
+            android:layout_marginBottom="120dp">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/m_ecodetail"/>
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/gohome"
+
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+
+            android:layout_below="@+id/imageview"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="700dp"
+
+            android:background="@drawable/m_homerogo"
+            android:text="."
+            android:textSize="0sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/goqna"
+
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+
+            android:layout_below="@+id/imageview"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="700dp"
+
+            android:background="@drawable/m_qna"
+            android:text="."
+            android:textSize="0sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/gomy"
+
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+
+            android:layout_below="@+id/imageview"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="700dp"
+            android:layout_marginRight="65dp"
+
+            android:background="@drawable/m_myrogo"
+            android:text="."
+            android:textSize="0sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</LinearLayout>

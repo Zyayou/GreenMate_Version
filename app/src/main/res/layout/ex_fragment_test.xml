@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/redblack" >
+
+    <!-- Hearder -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/redblack">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp" >
+
+            <ImageView
+                android:id="@+id/imageViewLogo"
+                android:layout_width="50dp"
+                android:layout_height="55dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:background="@color/redblack"
+                android:src="@drawable/icon_logo" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Main -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- banner -->
+        <FrameLayout
+            android:layout_width="372dp"
+            android:layout_height="198dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="15dp" >
+            <!-- android:layout_marginTop="15dp" -->
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/sliderViewPagerBanner"
+                android:layout_gravity="center"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/colorGray"
+                android:background="@drawable/patten02" />
+
+            <me.relex.circleindicator.CircleIndicator3
+                android:id="@+id/indicatorBanner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="bottom" />
+        </FrameLayout>
+
+        <!-- button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:orientation = "horizontal"
+            android:layout_marginTop="230dp">
+
+            <Button
+                android:id="@+id/ecodetail_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp"
+                android:paddingTop="15dp"
+
+                android:text="분리수거방법"
+                android:textSize="10dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:drawableTop="@drawable/icon_ecodetail"
+                android:backgroundTint="@color/MainColorB"
+                android:background="@drawable/patten02" />
+
+            <!-- android:background="@drawable/button_pattern" -->
+            <Button
+                android:id="@+id/ecosearch_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:paddingTop="15dp"
+
+                android:text="친환경 제품"
+                android:textSize="10dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:drawableTop="@drawable/icon_ecosearch"
+                android:backgroundTint="@color/MainColorY"
+                android:background="@drawable/patten02" />
+
+            <Button
+                android:id="@+id/ecoplace_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="20dp"
+                android:paddingTop="15dp"
+
+                android:text="지역별 배출요령"
+                android:textSize="10dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:drawableTop="@drawable/icon_ecoplace"
+                android:backgroundTint="@color/MainColorG"
+                android:background="@drawable/patten02" />
+
+
+        </LinearLayout>
+
+        <!-- news -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/joinedit" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp" >
+
+                <!-- title -->
+                <TextView
+                    android:id="@+id/textViewNews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:text="NEWS" />
+
+                <!-- content -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/textViewNews"
+                    android:layout_marginTop="10dp" >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        xmlns:tools="http://schemas.android.com/tools"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <androidx.viewpager2.widget.ViewPager2
+                            android:id="@+id/sliderViewPagerNews"
+                            android:layout_width="300dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            android:backgroundTint="@color/colorGray" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Foot -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="bottom"
+        app:itemIconSize="40dp"
+        app:labelVisibilityMode="unlabeled"
+        android:background="@color/text_color"
+        app:menu="@menu/bottom_menu" />
+</LinearLayout>

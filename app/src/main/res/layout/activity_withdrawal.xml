@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".WithdrawalActivity"
+    android:background="@color/redblack">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:gravity="center"
+        android:text="정말 탈퇴하시겠습니까?"
+        android:textSize="30dp"
+        android:fontFamily="@font/suite_bold"
+        android:textColor="@color/white" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="버튼을 눌러주시기 바랍니다."
+        android:textSize="20dp"
+        android:textColor="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="100dp"
+        android:gravity="left|center">
+        <Button
+            android:id="@+id/yesBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/icon_yes_btn"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="네"
+            android:textSize="25dp"
+            android:fontFamily="@font/suite_bold"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="100dp"
+        android:gravity="left|center">
+        <Button
+            android:id="@+id/noBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/icon_no_btn"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="아니오"
+            android:textSize="25dp"
+            android:fontFamily="@font/suite_bold"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+</LinearLayout>

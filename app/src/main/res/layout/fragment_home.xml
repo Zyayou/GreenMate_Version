@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".HomeFragment"
+    android:background="@color/redblack">
+    <!-- Main -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- banner -->
+        <FrameLayout
+            android:layout_width="372dp"
+            android:layout_height="198dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="15dp" >
+            <!-- android:layout_marginTop="15dp" -->
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/sliderViewPagerBanner"
+                android:layout_gravity="center"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/colorGray"
+                android:background="@drawable/patten02" />
+
+            <me.relex.circleindicator.CircleIndicator3
+                android:id="@+id/indicatorBanner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="bottom" />
+        </FrameLayout>
+
+        <!-- button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:orientation = "horizontal"
+            android:layout_marginTop="230dp">
+
+            <!-- 분리수거방법 버튼 -->
+            <LinearLayout
+                android:id="@+id/ecodetailLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:backgroundTint="@color/MainColorB"
+                android:background="@drawable/patten02" >
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/icon_color_ecodetail"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="분리수거방법"
+                    android:textSize="12dp"
+                    android:fontFamily="@font/suite_bold"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <!-- 친환경 제품 버튼 -->
+            <LinearLayout
+                android:id="@+id/ecosearchLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:backgroundTint="@color/MainColorY"
+                android:background="@drawable/patten02" >
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/icon_color_ecosearch"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="친환경 제품"
+                    android:textSize="12dp"
+                    android:fontFamily="@font/suite_bold"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+            <!-- 지역별 배출 버튼 -->
+            <LinearLayout
+                android:id="@+id/ecoplaceLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center"
+                android:backgroundTint="@color/MainColorG"
+                android:background="@drawable/patten02" >
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/icon_color_ecoplace"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="지역별 배출요령"
+                    android:textSize="12dp"
+                    android:fontFamily="@font/suite_bold"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!-- news -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/joinedit" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp" >
+
+                <!-- title -->
+                <TextView
+                    android:id="@+id/textViewNews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/suite_bold"
+                    android:text="NEWS" />
+
+                <!-- content -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/textViewNews"
+                    android:layout_marginTop="10dp" >
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        xmlns:tools="http://schemas.android.com/tools"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <androidx.viewpager2.widget.ViewPager2
+                            android:id="@+id/sliderViewPagerNews"
+                            android:layout_width="300dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            android:backgroundTint="@color/colorGray" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
