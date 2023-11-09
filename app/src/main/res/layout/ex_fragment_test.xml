@@ -38,142 +38,463 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
-
-        <!-- banner -->
-        <FrameLayout
-            android:layout_width="372dp"
-            android:layout_height="198dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="15dp" >
-            <!-- android:layout_marginTop="15dp" -->
-
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/sliderViewPagerBanner"
-                android:layout_gravity="center"
-                android:clipToPadding="false"
-                android:clipChildren="false"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:backgroundTint="@color/colorGray"
-                android:background="@drawable/patten02" />
-
-            <me.relex.circleindicator.CircleIndicator3
-                android:id="@+id/indicatorBanner"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_gravity="bottom" />
-        </FrameLayout>
-
-        <!-- button -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:orientation = "horizontal"
-            android:layout_marginTop="230dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/ecodetail_btn"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="5dp"
-                android:paddingTop="15dp"
-
-                android:text="분리수거방법"
-                android:textSize="10dp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:drawableTop="@drawable/icon_ecodetail"
-                android:backgroundTint="@color/MainColorB"
-                android:background="@drawable/patten02" />
-
-            <!-- android:background="@drawable/button_pattern" -->
-            <Button
-                android:id="@+id/ecosearch_btn"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:paddingTop="15dp"
-
-                android:text="친환경 제품"
-                android:textSize="10dp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:drawableTop="@drawable/icon_ecosearch"
-                android:backgroundTint="@color/MainColorY"
-                android:background="@drawable/patten02" />
-
-            <Button
-                android:id="@+id/ecoplace_btn"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="20dp"
-                android:paddingTop="15dp"
-
-                android:text="지역별 배출요령"
-                android:textSize="10dp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:drawableTop="@drawable/icon_ecoplace"
-                android:backgroundTint="@color/MainColorG"
-                android:background="@drawable/patten02" />
-
-
-        </LinearLayout>
-
-        <!-- news -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/joinedit" >
-
-            <RelativeLayout
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="30dp" >
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:searchIcon="@drawable/icon_black_search"
+                app:iconifiedByDefault="false"
+                android:background="@drawable/patten01"
+                android:backgroundTint="@color/white"
+                app:queryHint="검색어를 입력하세요."/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="카테고리"
+                android:textSize="20dp"
+                android:textColor="@color/white" />
 
-                <!-- title -->
-                <TextView
-                    android:id="@+id/textViewNews"
-                    android:layout_width="wrap_content"
+            <com.ramotion.foldingcell.FoldingCell
+                android:id="@+id/foldingCell"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:animationDuration="2000">
+                <!--편 부분(안보이는)-->
+                <LinearLayout
+                    android:id="@+id/cellContentView"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:textSize="20dp"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:text="NEWS" />
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:visibility="gone">
+                    <!-- 일반 종이 종이 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                        <CheckBox
+                            android:id="@+id/checkBox1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="@color/white"
+                            android:text="일반쓰레기"
+                            android:textSize="15dp"
+                            android:textColor="@color/white"/>
+                        <CheckBox
+                            android:id="@+id/checkBox2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="@color/white"
+                            android:text="종이팩/종이컵"
+                            android:textSize="15dp"
+                            android:textColor="@color/white"/>
+                        <CheckBox
+                            android:id="@+id/checkBox3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="@color/white"
+                            android:text="종이류"
+                            android:textSize="15dp"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+                    <!-- 플라 유리 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                        <CheckBox
+                            android:id="@+id/checkBox4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:buttonTint="@color/white"
+                            android:text="플라스틱류(PE/PP등)"
+                            android:textSize="15dp"
+                            android:textColor="@color/white"/>
+                        <CheckBox
+                            android:id="@+id/checkBox5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="@color/white"
+                            android:text="유리병류"
+                            android:textSize="15dp"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+                    <!-- 발표 비닐 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                        <CheckBox
+                            android:id="@+id/checkBox6"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:buttonTint="@color/white"
+                            android:text="발표합성수지(스트로폼)"
+                            android:textSize="15dp"
+                            android:textColor="@color/white"/>
+                        <CheckBox
+                            android:id="@+id/checkBox7"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:buttonTint="@color/white"
+                            android:text="비닐류(필름류)"
+                            android:textSize="15dp"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+                    <!-- 폐가 재활 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                        <CheckBox
+                            android:id="@+id/checkBox8"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:buttonTint="@color/white"
+                            android:text="폐가전제품 및 대형폐기물"
+                            android:textSize="15dp"
+                            android:textColor="@color/white"/>
+                        <CheckBox
+                            android:id="@+id/checkBox9"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:buttonTint="@color/white"
+                            android:text="재활용품"
+                            android:textSize="15dp"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+                    <!-- 금속 고철 페트 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                        <CheckBox
+                            android:id="@+id/checkBox10"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="@color/white"
+                            android:text="금속캔"
+                            android:textSize="15dp"
+                            android:textColor="@color/white"/>
+                        <CheckBox
+                            android:id="@+id/checkBox11"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="@color/white"
+                            android:text="고철류"
+                            android:textSize="15dp"
+                            android:textColor="@color/white"/>
+                        <CheckBox
+                            android:id="@+id/checkBox12"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="@color/white"
+                            android:text="페트병"
+                            android:textSize="15dp"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+                    <!-- 음식 유해 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                        <CheckBox
+                            android:id="@+id/checkBox13"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:buttonTint="@color/white"
+                            android:text="음식물류폐기물"
+                            android:textSize="15dp"
+                            android:textColor="@color/white"/>
+                        <CheckBox
+                            android:id="@+id/checkBox14"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:buttonTint="@color/white"
+                            android:text="유해폐기물"
+                            android:textSize="15dp"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+                    <!-- 불연 기타 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                        <CheckBox
+                            android:id="@+id/checkBox15"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:buttonTint="@color/white"
+                            android:text="불연성폐기물/가연성폐기물"
+                            android:textSize="15dp"
+                            android:textColor="@color/white"/>
+                        <CheckBox
+                            android:id="@+id/checkBox16"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="@color/white"
+                            android:text="기타"
+                            android:textSize="15dp"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+                    <!-- 버튼 2개 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="10dp" >
 
-                <!-- content -->
-                <RelativeLayout
+                        <Button
+                            android:id="@+id/catagoryBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/patten01"
+                            android:backgroundTint="@color/MainColorG"
+                            android:text="카테고리 적용하기"/>
+
+                        <Button
+                            android:id="@+id/closeBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/patten01"
+                            android:backgroundTint="@color/MainColorS"
+                            android:text="카테고리 접기"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+                <!--접힌 부분(보이는)-->
+                <LinearLayout
+                    android:id="@+id/cellTitleView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                    <TextView
+                        android:id="@+id/categoryView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:gravity="center"
+                        android:background="@color/MainColorG"
+                        android:text="카테고리 적용하기(클릭)"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+            </com.ramotion.foldingcell.FoldingCell>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="검색결과"
+                android:textSize="20dp"
+                android:textColor="@color/white" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_below="@+id/textViewNews"
-                    android:layout_marginTop="10dp" >
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        xmlns:android="http://schemas.android.com/apk/res/android"
-                        xmlns:app="http://schemas.android.com/apk/res-auto"
-                        xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+                    <!--결과물 하나-->
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" >
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:padding="20dp"
+                        android:background="@drawable/patten01"
+                        android:backgroundTint="@color/white">
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="화분"
+                            android:textSize="25dp"
+                            android:fontFamily="@font/suite_bold"/>
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@+id/textView11"
+                            android:layout_alignBottom="@+id/textView11"
+                            android:text="일반쓰레기"
+                            android:textColor="#d3d3d3"
+                            android:fontFamily="@font/suite_bold"/>
+                        <TextView
+                            android:id="@+id/textView13"
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_below="@+id/textView11"
+                            android:text="흙은 오염되지 않은 경우 화단 통에 버려도 되지만 아파트 화단 등 특수한 경우 가능하지 않을 수 있으므로 따로 확인이 필요합니다."
+                            android:fontFamily="@font/suite_bold"/>
+                        <Button
+                            android:id="@+id/detailBtn11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/textView13"
+                            android:layout_alignBottom="@+id/textView13"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/patten01"
+                            android:backgroundTint="@color/MainColorY"
+                            android:text="더보기"/>
+                    </RelativeLayout>
+                    <!--결과물 둘-->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:padding="20dp"
+                        android:background="@drawable/patten01"
+                        android:backgroundTint="@color/white">
+                        <TextView
+                            android:id="@+id/textView21"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="화분"
+                            android:textSize="25dp"
+                            android:fontFamily="@font/suite_bold"/>
+                        <TextView
+                            android:id="@+id/textView22"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@+id/textView21"
+                            android:layout_alignBottom="@+id/textView21"
+                            android:text="일반쓰레기"
+                            android:textColor="#d3d3d3"
+                            android:fontFamily="@font/suite_bold"/>
+                        <TextView
+                            android:id="@+id/textView23"
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_below="@+id/textView21"
+                            android:text="흙은 오염되지 않은 경우 화단 통에 버려도 되지만 아파트 화단 등 특수한 경우 가능하지 않을 수 있으므로 따로 확인이 필요합니다."
+                            android:fontFamily="@font/suite_bold"/>
+                        <Button
+                            android:id="@+id/detailBtn21"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/textView23"
+                            android:layout_alignBottom="@+id/textView23"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/patten01"
+                            android:backgroundTint="@color/MainColorY"
+                            android:text="더보기"/>
+                    </RelativeLayout>
+                    <!--결과물 셋-->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:padding="20dp"
+                        android:background="@drawable/patten01"
+                        android:backgroundTint="@color/white">
+                        <TextView
+                            android:id="@+id/textView31"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="화분"
+                            android:textSize="25dp"
+                            android:fontFamily="@font/suite_bold"/>
+                        <TextView
+                            android:id="@+id/textView32"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@+id/textView31"
+                            android:layout_alignBottom="@+id/textView31"
+                            android:text="일반쓰레기"
+                            android:textColor="#d3d3d3"
+                            android:fontFamily="@font/suite_bold"/>
+                        <TextView
+                            android:id="@+id/textView33"
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_below="@+id/textView31"
+                            android:text="흙은 오염되지 않은 경우 화단 통에 버려도 되지만 아파트 화단 등 특수한 경우 가능하지 않을 수 있으므로 따로 확인이 필요합니다."
+                            android:fontFamily="@font/suite_bold"/>
+                        <Button
+                            android:id="@+id/detailBtn31"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/textView33"
+                            android:layout_alignBottom="@+id/textView33"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/patten01"
+                            android:backgroundTint="@color/MainColorY"
+                            android:text="더보기"/>
+                    </RelativeLayout>
+                    <!--결과물 넷-->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:padding="20dp"
+                        android:background="@drawable/patten01"
+                        android:backgroundTint="@color/white">
+                        <TextView
+                            android:id="@+id/textView41"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="화분"
+                            android:textSize="25dp"
+                            android:fontFamily="@font/suite_bold"/>
+                        <TextView
+                            android:id="@+id/textView42"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@+id/textView41"
+                            android:layout_alignBottom="@+id/textView41"
+                            android:text="일반쓰레기"
+                            android:textColor="#d3d3d3"
+                            android:fontFamily="@font/suite_bold"/>
+                        <TextView
+                            android:id="@+id/textView43"
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_below="@+id/textView41"
+                            android:text="흙은 오염되지 않은 경우 화단 통에 버려도 되지만 아파트 화단 등 특수한 경우 가능하지 않을 수 있으므로 따로 확인이 필요합니다."
+                            android:fontFamily="@font/suite_bold"/>
+                        <Button
+                            android:id="@+id/detailBtn41"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/textView43"
+                            android:layout_alignBottom="@+id/textView43"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/patten01"
+                            android:backgroundTint="@color/MainColorY"
+                            android:text="더보기"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </ScrollView>
 
-                        <androidx.viewpager2.widget.ViewPager2
-                            android:id="@+id/sliderViewPagerNews"
-                            android:layout_width="300dp"
-                            android:layout_height="match_parent"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            android:backgroundTint="@color/colorGray" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </RelativeLayout>
-            </RelativeLayout>
         </LinearLayout>
     </RelativeLayout>
 

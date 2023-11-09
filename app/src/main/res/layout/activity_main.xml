@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
+    tools:context=".activity.MainActivity"
     android:background="@color/redblack" >
 
     <!-- Hearder -->
@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_gravity="bottom"
-        app:itemIconSize="40dp"
+        app:itemIconSize="30dp"
         app:labelVisibilityMode="unlabeled"
         android:background="@color/text_color"
         app:menu="@menu/bottom_menu" />

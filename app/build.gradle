@@ -52,6 +52,6 @@ dependencies {
     implementation "androidx.viewpager2:viewpager2:1.0.0" // ViewPager2
     implementation 'me.relex:circleindicator:2.1.6' // Indicator
     implementation 'de.hdodenhof:circleimageview:3.1.0' //Circle ImageView
-
+    implementation 'com.ramotion.foldingcell:folding-cell:1.2.3' // 검색하는 곳에 카테고리
 
 }

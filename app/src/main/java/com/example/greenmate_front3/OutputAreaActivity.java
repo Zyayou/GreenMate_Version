@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.greenmate_front3.activity.MainActivity;
+
 public class OutputAreaActivity extends AppCompatActivity {
 
     Button goplace;

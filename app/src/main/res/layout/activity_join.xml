@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".JoinActivity"
+    tools:context=".activity.JoinActivity"
     android:background="@color/redblack">
     <!-- android:background="@drawable/m_join" -->
     <!-- android:background="@color/redblack" -->
@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="730dp"
             android:layout_alignParentBottom="true"
-            android:background="@drawable/joinedit" >
+            android:background="@drawable/patten_joinedit" >
             <!-- android:background="@drawable/joinedit" -->
 
             <RelativeLayout
@@ -81,6 +81,8 @@
                     android:gravity="center"
                     android:padding="0dp"
 
+
+                    android:backgroundTint="@color/white"
                     android:background="@drawable/patten01"
                     android:textColor="@color/black"
                     android:textSize="16dp"
@@ -121,6 +123,7 @@
                     android:padding="0dp"
 
                     android:background="@drawable/patten01"
+                    android:backgroundTint="@color/white"
                     android:text="중복확인"
                     android:textColor="@color/black"
                     android:fontFamily="@font/suite_bold"
@@ -137,19 +140,18 @@
                     android:fontFamily="@font/suite_bold"
                     android:text="비밀번호" />
 
-                <!-- 비밀번호 확인 -->
                 <EditText
                     android:id="@+id/joinPw"
                     android:layout_width="330dp"
                     android:layout_height="50dp"
                     android:layout_below="@+id/textViewPw"
-                    android:layout_marginTop="0dp"
-                    android:ems="12"
                     android:gravity="left|center"
+                    android:ems="12"
+                    android:textSize="14sp"
                     android:hint="비밀번호"
-                    android:inputType="textPassword"
-                    android:textSize="14sp" />
+                    android:inputType="textPassword" />
 
+                <!-- 비밀번호 확인 -->
                 <TextView
                     android:id="@+id/textViewPwck"
                     android:layout_width="wrap_content"
@@ -206,7 +208,7 @@
 
                 <EditText
                     android:id="@+id/joinPhone"
-                    android:layout_width="265dp"
+                    android:layout_width="330dp"
                     android:layout_height="50dp"
                     android:layout_below="@+id/textViewPhone"
                     android:gravity="left|center"
@@ -214,23 +216,6 @@
                     android:textSize="14sp"
                     android:hint="'-'포함하여 입력"
                     android:inputType="phone"/>
-
-                <Button
-                    android:id="@+id/checkPhoneBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_toRightOf="@+id/joinPhone"
-                    android:layout_below="@+id/joinName"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="25dp"
-                    android:gravity="center"
-                    android:padding="0dp"
-
-                    android:background="@drawable/patten01"
-                    android:text="중복확인"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/suite_bold"
-                    android:textSize="16dp" />
 
                 <!-- 생년월일 -->
                 <TextView

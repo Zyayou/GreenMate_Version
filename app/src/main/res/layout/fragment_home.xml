@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".HomeFragment"
+    tools:context=".fragment.HomeFragment"
     android:background="@color/redblack">
     <!-- Main -->
     <RelativeLayout
@@ -132,7 +132,7 @@
             android:layout_width="match_parent"
             android:layout_height="350dp"
             android:layout_alignParentBottom="true"
-            android:background="@drawable/joinedit" >
+            android:background="@drawable/patten_joinedit" >
 
             <RelativeLayout
                 android:layout_width="match_parent"

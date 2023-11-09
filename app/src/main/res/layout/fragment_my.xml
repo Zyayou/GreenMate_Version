@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MyFragment"
+    tools:context=".fragment.MyFragment"
     android:background="@color/redblack">
 
     <!-- Main -->
@@ -166,26 +166,38 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:padding="20dp"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:gravity="left|bottom"
                     android:backgroundTint="@color/MainColorB"
-                    android:background="@drawable/patten_topright"
-                    android:clickable="true">
+                    android:background="@drawable/patten_topright" >
 
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="경고횟수"
+                            android:textSize="20dp"
+                            android:fontFamily="@font/suite_bold"
+                            android:textColor="@color/black" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Warnings"
+                            android:textStyle="normal"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="경고횟수"
-                        android:textSize="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="0"
+                        android:textSize="60dp"
                         android:fontFamily="@font/suite_bold"
-                        android:textColor="@color/black" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="Warnings"
-                        android:textStyle="normal"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/white" />
                 </LinearLayout>
 
             </LinearLayout>

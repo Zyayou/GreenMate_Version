@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.example.greenmate_front3.activity.LoginActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -91,7 +92,7 @@ public class RegisterActivity extends Activity {
 
 
         /////////////////////////////////////////////////이메일 중복 버튼 이벤트 ///////////////////////////////////////////////////////////////
-        check_email_button = findViewById(R.id.checkPhoneBtn);
+        check_email_button = findViewById(R.id.checkEmailBtn);
         check_email_button.setOnClickListener(new View.OnClickListener() {
 
             @Override
