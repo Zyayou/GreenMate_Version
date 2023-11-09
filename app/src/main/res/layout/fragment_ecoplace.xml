@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    tools:context=".eco.EcoPlaceFragment"
+    android:background="@color/redblack">
+    <Spinner
+        android:id="@+id/areaState"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/patten01"
+        android:backgroundTint="@color/white"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/state"
+        android:paddingTop="5dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:tooltipText="도" />
+    <Spinner
+        android:id="@+id/areaCity"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/areaState"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:paddingTop="5dp"
+        android:textAlignment="center"
+        android:entries="@array/city_gb"
+        android:drawSelectorOnTop="true"
+        android:background="@drawable/patten01"
+        android:backgroundTint="@color/white"
+        android:tooltipText="시"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/searchBtn"
+        android:layout_width="80dp"
+        android:layout_height="70dp"
+        android:layout_toRightOf="@+id/areaCity"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/patten02"
+        android:backgroundTint="@color/MainColorB"
+        android:text="검색"
+        android:textSize="20dp"
+        android:textColor="@color/white" />
+
+
+    <ImageView
+        android:id="@+id/outimage"
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/areaCity"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:background="@color/white"/>
+
+    <TextView
+        android:id="@+id/textURL"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_below="@+id/outimage"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="15dp"
+        android:gravity="center"
+        android:text="출처 URL : "
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/areaURL"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_below="@+id/outimage"
+        android:layout_toRightOf="@+id/textURL"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="링크링크링크링크링크링크링크링크"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/mapBtn"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/areaURL"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/patten01"
+        android:backgroundTint="@color/MainColorY"
+        android:text="자세한 쓰레기장 위치 보기"
+        android:textSize="20dp"
+        android:fontFamily="@font/suite_bold"
+        android:textColor="@color/white" />
+    <!-- 비져빌리티 추가됨-->
+
+</RelativeLayout>
