@@ -17,11 +17,11 @@
 
         <ImageView
             android:id="@+id/imageViewLogo"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_alignParentTop="true"
             android:layout_centerInParent="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             android:background="@color/redblack"
             android:src="@drawable/icon_logo" />
 
@@ -48,8 +48,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="28dp"
-                android:layout_marginRight="26dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="50dp"
                 android:layout_marginTop="40dp">
 
                 <!-- 아이디 -->
@@ -63,9 +63,10 @@
 
                 <EditText
                     android:id="@+id/joinId"
-                    android:layout_width="265dp"
+                    android:layout_width="350dp"
                     android:layout_height="50dp"
                     android:layout_below="@+id/textViewId"
+                    android:layout_marginLeft="20dp"
                     android:gravity="left|center"
                     android:ems="12"
                     android:hint="아이디"
@@ -102,9 +103,10 @@
 
                 <EditText
                     android:id="@+id/joinEmail"
-                    android:layout_width="265dp"
+                    android:layout_width="350dp"
                     android:layout_height="50dp"
                     android:layout_below="@+id/textViewEmail"
+                    android:layout_marginLeft="20dp"
                     android:gravity="left|center"
                     android:ems="12"
                     android:textSize="14sp"
@@ -142,9 +144,10 @@
 
                 <EditText
                     android:id="@+id/joinPw"
-                    android:layout_width="330dp"
+                    android:layout_width="400dp"
                     android:layout_height="50dp"
                     android:layout_below="@+id/textViewPw"
+                    android:layout_marginLeft="20dp"
                     android:gravity="left|center"
                     android:ems="12"
                     android:textSize="14sp"
@@ -164,9 +167,10 @@
 
                 <EditText
                     android:id="@+id/joinPwck"
-                    android:layout_width="330dp"
+                    android:layout_width="400dp"
                     android:layout_height="50dp"
                     android:layout_below="@+id/textViewPwck"
+                    android:layout_marginLeft="20dp"
                     android:gravity="left|center"
                     android:ems="12"
                     android:textSize="14sp"
@@ -186,9 +190,10 @@
 
                 <EditText
                     android:id="@+id/joinName"
-                    android:layout_width="330dp"
+                    android:layout_width="400dp"
                     android:layout_height="50dp"
                     android:layout_below="@+id/textViewName"
+                    android:layout_marginLeft="20dp"
                     android:gravity="left|center"
                     android:ems="12"
                     android:textSize="14sp"
@@ -208,9 +213,10 @@
 
                 <EditText
                     android:id="@+id/joinPhone"
-                    android:layout_width="330dp"
+                    android:layout_width="400dp"
                     android:layout_height="50dp"
                     android:layout_below="@+id/textViewPhone"
+                    android:layout_marginLeft="20dp"
                     android:gravity="left|center"
                     android:ems="12"
                     android:textSize="14sp"
@@ -230,9 +236,10 @@
 
                 <EditText
                     android:id="@+id/joinBirth"
-                    android:layout_width="330dp"
+                    android:layout_width="400dp"
                     android:layout_height="50dp"
                     android:layout_below="@+id/textViewBirth"
+                    android:layout_marginLeft="20dp"
                     android:gravity="left|center"
                     android:ems="12"
                     android:textSize="14sp"
@@ -249,7 +256,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_centerVertical="true"
                     android:layout_gravity="left"
-                    android:layout_marginLeft="70dp"
+                    android:layout_marginLeft="100dp"
                     android:layout_marginBottom="40dp"
 
                     android:background="@drawable/patten01"
@@ -268,7 +275,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="70dp"
+                    android:layout_marginRight="100dp"
                     android:layout_marginBottom="40dp"
 
                     android:background="@drawable/patten01"

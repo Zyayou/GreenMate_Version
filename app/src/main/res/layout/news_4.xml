@@ -11,17 +11,17 @@
 
         <ImageView
             android:id="@+id/imgNews4"
-            android:layout_width="225dp"
-            android:layout_height="175dp"
+            android:layout_width="320dp"
+            android:layout_height="180dp"
             android:layout_centerHorizontal="true"
 
             android:scaleType = "centerCrop"
             android:background="@drawable/patten02"
-            android:src="@drawable/banner4"/>
+            android:src="@drawable/news4"/>
 
         <TextView
             android:id="@+id/textNews4"
-            android:layout_width="225dp"
+            android:layout_width="460dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:paddingTop="10dp"
@@ -29,6 +29,6 @@
             android:layout_below="@+id/imgNews4"
             android:textAlignment="center"
             android:textSize="20dp"
-            android:text="텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트" />
+            android:text="'전기차 탄소중립센터' 생긴다…국내 폐배터리 이력 관리" />
     </RelativeLayout>
 </FrameLayout>

@@ -11,17 +11,17 @@
 
         <ImageView
             android:id="@+id/imgNews2"
-            android:layout_width="225dp"
-            android:layout_height="175dp"
+            android:layout_width="320dp"
+            android:layout_height="180dp"
             android:layout_centerHorizontal="true"
 
             android:scaleType = "centerCrop"
             android:background="@drawable/patten02"
-            android:src="@drawable/banner6"/>
+            android:src="@drawable/news2"/>
 
         <TextView
             android:id="@+id/textNews2"
-            android:layout_width="225dp"
+            android:layout_width="460dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:paddingTop="10dp"
@@ -29,6 +29,6 @@
             android:layout_below="@+id/imgNews2"
             android:textAlignment="center"
             android:textSize="20dp"
-            android:text="텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트" />
+            android:text="종이빨대 업체들 “정부 믿다 생사 기로에…플라스틱 금지 예정대로”" />
     </RelativeLayout>
 </FrameLayout>

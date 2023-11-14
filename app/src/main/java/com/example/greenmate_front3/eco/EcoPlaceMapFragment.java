@@ -1,6 +1,5 @@
 package com.example.greenmate_front3.eco;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,29 +7,30 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
-import com.example.greenmate_front3.CleanHouseRequest;
-import com.example.greenmate_front3.PlacegarageActivity;
+import com.android.volley.RequestQueue;
 import com.example.greenmate_front3.R;
-import com.example.greenmate_front3.activity.MainActivity;
 
 import net.daum.mf.map.api.MapPOIItem;
-import net.daum.mf.map.api.MapPoint;
 import net.daum.mf.map.api.MapView;
+import net.daum.mf.map.api.MapPoint;
 
-import org.json.JSONArray;
+import com.android.volley.toolbox.Volley;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONArray;
 
-public class EcoPlaceMapFragment extends Fragment {
+import com.example.greenmate_front3.CleanHouseRequest;
+
+
+public class EcoPlaceMapFragment extends Fragment implements MapView.POIItemEventListener{
     public MapView mapView; //mf로 import할것
     public ViewGroup mapViewContainer;
     TextView addressText;
+
     public EcoPlaceMapFragment() {
         // Required empty public constructor
     }
@@ -40,36 +40,32 @@ public class EcoPlaceMapFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup view = (ViewGroup) inflater.inflate(R.layout.fragment_ecoplace_map, container, false);
 
-        String area_state = "경상북도";   //가져온 Extars 중에서 꺼내기
+        // mapViewContainer 초기화 (한 번만)
+        mapViewContainer = (ViewGroup) view.findViewById(R.id.mapView);
+
+        // 테스트 (텍스트 띄우기)
+        addressText = view.findViewById(R.id.addressText);
+
+        String area_state = "경상북도";   // 가져온 Extars 중에서 꺼내기
         String area_city = "안동시";
 
-
-        //테스트 (텍스트 띄우기)
-        addressText = view.findViewById(R.id.addressText);
-        //addressText.setText(area_state+" "+area_city);
-        // 이전 페이지에서 값 가져오기>
-
-        // <지도 띄우기-----------------------------------------------------
+        // <지도 띄우기----------------------------------------------------
         mapView = new MapView(getActivity());
-        mapViewContainer = (ViewGroup) view.findViewById(R.id.mapView);
         mapViewContainer.addView(mapView);
 
-/*
-        //mapView.setPOIItemEventListener(this); // 이벤트 사용 하려면 추가해야 함
+        mapView.setPOIItemEventListener(this); // 이벤트 사용 하려면 추가해야 함
 
         // 중심점 바꾸기(임시좌표)
         mapView.setMapCenterPoint(MapPoint.mapPointWithGeoCoord(36.5785066, 128.573529), true);
         // 지도 표시
         mapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOnWithoutHeading);
 
-        // --------------------------------------------------지도 띄우기>
-
         // <핀-----------------------------------------------------------
         // 복수, DB에서 좌표 값 불러와 지도에 띄우기
-
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -112,12 +108,21 @@ public class EcoPlaceMapFragment extends Fragment {
         CleanHouseRequest cleanHouseRequest = new CleanHouseRequest(area_state, area_city, responseListener);
         RequestQueue queue = Volley.newRequestQueue(getActivity());
         queue.add(cleanHouseRequest);
-*/
+
+
         return view;
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mapView != null) {
+            mapViewContainer.removeView(mapView);
+            mapView = null;
+        }
+    }
 
-/*
+
     @Override
     public void onPOIItemSelected(MapView mapView, MapPOIItem poiItem){
         addressText.setText(poiItem.getItemName());
@@ -135,7 +140,8 @@ public class EcoPlaceMapFragment extends Fragment {
 
     @Override
     public void onDraggablePOIItemMoved(MapView mapView, MapPOIItem mapPOIItem, MapPoint mapPoint) {
+
     }
 
- */
 }
+

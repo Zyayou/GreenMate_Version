@@ -35,9 +35,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".OutputAreaActivity" android:label="OutputArea 액티비티" />
-        <activity android:name=".PlacegarageActivity" android:label="Placegarage 액티비티" />
-
         <activity android:name=".RegisterActivity" android:label="join 액티비티" />
 
         <activity android:name=".activity.EditActivity" android:label="edit profile 액티비티" />

@@ -37,7 +37,7 @@
             android:layout_below="@+id/textViewContent"
             android:layout_alignParentLeft="true"
             android:layout_marginTop="200dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="100dp"
             android:background="@drawable/icon_yes_btn"/>
 
         <Button
@@ -47,7 +47,7 @@
             android:layout_below="@+id/textViewContent"
             android:layout_alignParentRight="true"
             android:layout_marginTop="200dp"
-            android:layout_marginRight="40dp"
+            android:layout_marginRight="100dp"
             android:background="@drawable/icon_no_btn"/>
     </RelativeLayout>
 </LinearLayout>

@@ -27,15 +27,16 @@
             android:orientation="vertical">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/circleImg"
+                android:id="@+id/userImg"
                 android:layout_width="140dp"
                 android:layout_height="140dp"
-                android:src="@drawable/banner6"
+                android:src="@drawable/user_img"
                 app:civ_border_color="#000000"
                 app:civ_border_overlay="true"
                 app:civ_border_width="5dp" />
 
             <TextView
+                android:id="@+id/userName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -49,8 +50,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp">
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -107,14 +108,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp">
             <ProgressBar
-                style="?android:attr/progressBarStyleHorizontal"
+                android:id="@+id/userLevel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:progress="35"
                 android:max="100"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:progressDrawable="@drawable/patten03" />
             <!-- 5 20 35 50 65 80 100 -->
         </LinearLayout>
@@ -138,7 +140,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:padding="20dp"
+                    android:padding="30dp"
                     android:orientation="vertical"
                     android:gravity="left|bottom"
                     android:backgroundTint="@color/MainColorY"
@@ -165,7 +167,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:padding="20dp"
+                    android:padding="30dp"
                     android:orientation="horizontal"
                     android:gravity="left|bottom"
                     android:backgroundTint="@color/MainColorB"
@@ -191,6 +193,7 @@
                             android:textColor="@color/black" />
                     </LinearLayout>
                     <TextView
+                        android:id="@+id/userCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -212,7 +215,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:padding="20dp"
+                    android:padding="30dp"
                     android:orientation="vertical"
                     android:gravity="left|bottom"
                     android:backgroundTint="@color/MainColorS"
@@ -240,7 +243,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:padding="20dp"
+                    android:padding="30dp"
                     android:orientation="vertical"
                     android:gravity="left|bottom"
                     android:backgroundTint="@color/MainColorG"
@@ -271,7 +274,7 @@
             android:id="@+id/logoutLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="40dp"
             android:layout_marginTop="20dp"
             android:clickable="true"
             android:orientation="horizontal">
