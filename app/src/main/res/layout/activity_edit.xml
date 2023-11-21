@@ -260,6 +260,7 @@
                     android:layout_marginRight="100dp"
                     android:layout_marginBottom="40dp"
 
+
                     android:background="@drawable/patten01"
                     android:gravity="center"
                     android:text="취소"

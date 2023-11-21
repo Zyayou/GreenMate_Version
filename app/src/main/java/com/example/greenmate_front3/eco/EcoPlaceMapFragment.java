@@ -60,6 +60,10 @@ public class EcoPlaceMapFragment extends Fragment implements MapView.POIItemEven
             area_city = getArguments().getString("city"); // 프래그먼트1에서 받아온 값 넣기
         }
 
+        //경북 안동 만
+        area_state = "경상북도";
+        area_city = "안동시";
+
         // <지도 띄우기----------------------------------------------------
         mapView = new MapView(getActivity());
         mapViewContainer.addView(mapView);

@@ -35,7 +35,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".RegisterActivity" android:label="join 액티비티" />
 
         <activity android:name=".activity.EditActivity" android:label="edit profile 액티비티" />
         <activity android:name=".activity.WithdrawalActivity" android:label="withdrawal 액티비티" />

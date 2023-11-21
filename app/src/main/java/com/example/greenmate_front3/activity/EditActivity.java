@@ -1,7 +1,10 @@
 package com.example.greenmate_front3.activity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,12 +13,23 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
 import com.example.greenmate_front3.R;
+import com.example.greenmate_front3.request.UpdateMemRequest;
+import com.example.greenmate_front3.request.ValidateEmailRequest;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class EditActivity extends AppCompatActivity {
 
     private EditText joinId, joinEmail, joinPw, joinPwck, joinName, joinPhone, joinBirth;
     private Button checkBtn, editBtn, deleteBtn;
+    private AlertDialog dialog;
+    private boolean validate_id = false;
+    private boolean validate_email = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,12 +45,80 @@ public class EditActivity extends AppCompatActivity {
         joinPhone = findViewById(R.id.joinPhone);
         joinBirth = findViewById(R.id.joinBirth);
 
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String userId = preferences.getString("m_id", "");
+        String userPw = preferences.getString("m_pw", "");
+        String userName = preferences.getString("m_name", "");
+        String userEmail = preferences.getString("m_email", "");
+        String userBirth = preferences.getString("m_birth", "");
+        String userPhone = preferences.getString("m_phone", "");
+
+        joinId.setText(userId);
+        joinEmail.setText(userEmail);
+        joinPw.setText(userPw);
+        joinName.setText(userName);
+        joinPhone.setText(userPhone);
+        joinBirth.setText(userBirth);
+
+        joinId.setEnabled(false);
+        validate_id = true;
+
         // 중복확인 버튼 - 이메일 중복 체크
         checkBtn = findViewById(R.id.checkEmailBtn);
         checkBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"이메일 중복 버튼",Toast.LENGTH_SHORT).show();
+                String m_email = joinEmail.getText().toString();
+                if (validate_email) {
+                    return; //검증 완료
+                }
+
+                if (m_email.equals("")) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(EditActivity.this);
+                    dialog = builder.setMessage("이메일을 입력하세요.").setPositiveButton("확인", null).create();
+                    dialog.show();
+                    return;
+                }
+
+                Response.Listener<String> responseListener = new Response.Listener<String>(){
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            //edit_id.setText(response); //테스트용 코드
+                            JSONObject jsonResponse = new JSONObject(response);
+                            boolean successEmail = jsonResponse.getBoolean("success");
+
+                            if (successEmail) {
+                                AlertDialog.Builder builder = new AlertDialog.Builder(EditActivity.this);
+                                dialog = builder.setMessage("사용할 수 있는 이메일입니다.").setPositiveButton("확인", null).create();
+                                dialog.show();
+                                joinEmail.setEnabled(false); //아이디값 고정
+                                validate_email = true; //검증 완료
+                                checkBtn.setBackgroundColor(getResources().getColor(R.color.colorGray));
+                            }
+                            else {
+                                if(userEmail.equals(joinEmail.getText().toString())){
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(EditActivity.this);
+                                    dialog = builder.setMessage("기존의 이메일입니다.").setNegativeButton("확인", null).create();
+                                    dialog.show();
+
+                                    validate_email = true;
+                                } else {
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(EditActivity.this);
+                                    dialog = builder.setMessage("이미 존재하는 이메일입니다.").setNegativeButton("확인", null).create();
+                                    dialog.show();
+                                    validate_email = false;
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                };
+
+                ValidateEmailRequest validateRequestEmail = new ValidateEmailRequest(m_email, responseListener);
+                RequestQueue queue = Volley.newRequestQueue(EditActivity.this);
+                queue.add(validateRequestEmail);
             }
         });
 
@@ -46,10 +128,89 @@ public class EditActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class );
-                startActivity(intent);
+                final String m_id = joinId.getText().toString();
+                final String m_pw = joinPw.getText().toString();
+                final String m_pwck = joinPwck.getText().toString();
+                final String m_name = joinName.getText().toString();
+                final String m_email = joinEmail.getText().toString();
+                final String m_birth = joinBirth.getText().toString();
+                final String m_phone = joinPhone.getText().toString();
 
-                Toast.makeText(getApplicationContext(),"수정이 완료되었습니다.",Toast.LENGTH_SHORT).show();
+                //아이디 중복체크 했는지 확인
+                if (!validate_id) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(EditActivity.this);
+                    dialog = builder.setMessage("중복된 아이디가 있는지 확인하세요.").setNegativeButton("확인", null).create();
+                    dialog.show();
+                    return;
+                }
+
+
+                //이메일 중복체크 했는지 확인
+                if (!validate_email) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(EditActivity.this);
+                    dialog = builder.setMessage("중복된 이메일이 있는지 확인하세요.").setNegativeButton("확인", null).create();
+                    dialog.show();
+                    return;
+                }
+
+                //한 칸이라도 입력 안했을 경우
+                if (m_id.equals("") || m_pw.equals("") || m_name.equals("") || m_email.equals("")  || m_birth.equals("")  || m_phone.equals("") ) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(EditActivity.this);
+                    dialog = builder.setMessage("모두 입력해주세요.").setNegativeButton("확인", null).create();
+                    dialog.show();
+                    return;
+                }
+
+                //비밀번호, 비밀번호 확인이 일치하지 않을 경우
+                if(!(m_pw.equals(m_pwck))) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(EditActivity.this);
+                    dialog = builder.setMessage("비밀번호가 동일하지 않습니다.").setNegativeButton("확인", null).create();
+                    dialog.show();
+                    return;
+                }
+
+                //DB등록
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            //edit_email.setText(response);  //테스트용
+                            JSONObject jsonObject = new JSONObject( response );
+                            boolean successResult = jsonObject.getBoolean( "success" );
+                            //회원가입 성공시
+                            if (successResult) {
+
+                                SharedPreferences.Editor editor = preferences.edit();
+                                editor.putString("m_id", m_id);
+                                editor.putString("m_pw", m_pw);
+                                editor.putString("m_name", m_name);
+                                editor.putString("m_email",m_email);
+                                editor.putString("m_birth", m_birth);
+                                editor.putString("m_phone", m_birth);
+                                editor.apply();
+
+                                Toast.makeText(getApplicationContext(), String.format("%s님 정보가 수정되었습니다.", m_name), Toast.LENGTH_SHORT).show();
+
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(intent);
+
+                                //회원가입 실패시
+                            } else {
+                                //edit_phone.setText(response);  //테스트용
+                                Toast.makeText(getApplicationContext(), "회원가입에 실패하였습니다. 형식에 맞게 정보를 입력해주세요.", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                };
+
+                //서버로 Volley를 이용해서 요청
+                UpdateMemRequest registerRequest = new UpdateMemRequest( m_id, m_pw, m_name, m_email, m_birth, m_phone, responseListener);
+                RequestQueue queue = Volley.newRequestQueue( EditActivity.this );
+                queue.add( registerRequest );
             }
         });
 
