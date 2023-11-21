@@ -1,5 +1,7 @@
 package com.example.greenmate_front3.eco;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -71,6 +73,23 @@ public class EcoSearchFragment extends Fragment{
                 Toast.makeText(getActivity(),"두번째 결과물 더보기",Toast.LENGTH_SHORT).show();
             }
         });
+
+
+        //준비중 입니다.
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("안내");
+        builder.setMessage("현재 준비중인 페이지 입니다.");
+        builder.setIcon(android.R.drawable.ic_dialog_alert);
+
+        // Yes 버튼 및 이벤트 생성
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //Pass
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
 
 
         return view;

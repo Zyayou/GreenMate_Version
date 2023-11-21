@@ -44,6 +44,21 @@ public class EcoPlaceFragment extends Fragment{
         outimage = (ImageView) view.findViewById(R.id.outImg);
         areaURL = (TextView) view.findViewById(R.id.areaURL);
 
+        //다른 지역 준비중 안내
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("안내");
+        builder.setMessage("현재 다음 지역의 지역별 배출요령만 제공되고 있습니다. \n(안동, 경주, 제주)");
+        builder.setIcon(android.R.drawable.ic_dialog_alert);
+
+        // Yes 버튼 및 이벤트 생성
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
         // 도 항목 선택 시
         stateSpi.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -205,11 +220,22 @@ public class EcoPlaceFragment extends Fragment{
             public void onClick(View v) {
 
                 Toast.makeText(getActivity(),"검색 버튼 선택",Toast.LENGTH_SHORT).show();
-                if(citySpi.getSelectedItemId() == 4){
-                    outimage.setBackgroundResource(R.drawable.anuout);
+
+                if((stateSpi.getSelectedItemId() == 15) && (citySpi.getSelectedItemId() == 4)){
+                    outimage.setBackgroundResource(R.drawable.out_andong);
                     areaURL.setText("https://www.andong.go.kr/portal/contents.do?mId=0607000000");
-                    // 지도로 가기 버튼 가시화
-                    mapBtn.setVisibility(View.VISIBLE);
+                }
+                if((stateSpi.getSelectedItemId() == 15) && (citySpi.getSelectedItemId() == 2)){
+                    outimage.setBackgroundResource(R.drawable.out_gyeongju);
+                    areaURL.setText("https://gyeongju.go.kr/open_content/ko/page.do?step=258&parm_bod_uid=180687&pageOrder=0&srchEnable=1&pageNo=1&srchKeyword=&srchSDate=&pageRef=0&srchBgpUid=-1&mnu_uid=1602&parm_mnu_uid=0&pagePrvNxt=1&srchEDate=&srchVoteType=-1&srchColumn=&");
+                }
+                if((stateSpi.getSelectedItemId() == 17) && (citySpi.getSelectedItemId() == 1)){
+                    outimage.setBackgroundResource(R.drawable.out_seogwipo);
+                    areaURL.setText("https://www.seogwipo.go.kr/group/clean/life/archives.htm?act=view&seq=124312507");
+                }
+                if((stateSpi.getSelectedItemId() == 17) && (citySpi.getSelectedItemId() == 2)){
+                    outimage.setBackgroundResource(R.drawable.out_jeju);
+                    areaURL.setText("https://www.jejusi.go.kr/field/eco/weekwaste.do");
                 }
             }
         });
@@ -235,13 +261,6 @@ public class EcoPlaceFragment extends Fragment{
                         ecoPlaceMapFragment.setArguments(bundlems);
                         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, ecoPlaceMapFragment).addToBackStack(null).commit();
                         Toast.makeText(getActivity(),"지도",Toast.LENGTH_SHORT).show();
-                    }
-                });
-                //Cancel 버튼 및 이벤트 생성
-                builder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        //Pass
                     }
                 });
 

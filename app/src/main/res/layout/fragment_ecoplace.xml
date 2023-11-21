@@ -54,11 +54,11 @@
     <ImageView
         android:id="@+id/outImg"
         android:layout_width="match_parent"
-        android:layout_height="330dp"
+        android:layout_height="450dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/areaCity"
         android:layout_gravity="center"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="60dp"
         android:background="@color/white"/>
 
     <TextView
@@ -82,19 +82,19 @@
         android:layout_marginLeft="15dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="링크링크링크링크링크링크링크링크"
+        android:text=""
         android:textColor="@color/white" />
 
     <Button
         android:id="@+id/mapBtn"
-        android:layout_width="250dp"
+        android:layout_width="255dp"
         android:layout_height="40dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/areaURL"
         android:layout_marginTop="20dp"
         android:background="@drawable/patten01"
         android:backgroundTint="@color/MainColorY"
-        android:text="자세한 쓰레기장 위치 보기"
+        android:text="자세한 클린하우스 위치 보기"
         android:textSize="20dp"
         android:fontFamily="@font/suite_bold"
         android:textColor="@color/white"
