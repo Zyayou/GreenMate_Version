@@ -32,8 +32,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Set;
 
 public class EcoDetailFragment extends Fragment {
     private FoldingCell foldingCell;
@@ -116,8 +118,30 @@ public class EcoDetailFragment extends Fragment {
                 if(ch16.isChecked()) result += ch16.getText()+" ";
                 if(result == "") result = "적용된 카테고리가 없습니다.";
 
+                // 선택된 카테고리를 어댑터에 전달
+                Set<String> selectedCategories = new HashSet<>();
+                if (ch1.isChecked()) selectedCategories.add(ch1.getText().toString());
+                if (ch2.isChecked()) selectedCategories.add(ch2.getText().toString());
+                if(ch3.isChecked()) selectedCategories.add(ch3.getText().toString());
+                if(ch4.isChecked()) selectedCategories.add(ch4.getText().toString());
+                if(ch5.isChecked()) selectedCategories.add(ch5.getText().toString());
+                if(ch6.isChecked()) selectedCategories.add(ch6.getText().toString());
+                if(ch7.isChecked()) selectedCategories.add(ch7.getText().toString());
+                if(ch8.isChecked()) selectedCategories.add(ch8.getText().toString());
+                if(ch9.isChecked()) selectedCategories.add(ch9.getText().toString());
+                if(ch10.isChecked()) selectedCategories.add(ch10.getText().toString());
+                if(ch11.isChecked()) selectedCategories.add(ch11.getText().toString());
+                if(ch12.isChecked()) selectedCategories.add(ch12.getText().toString());
+                if(ch13.isChecked()) selectedCategories.add(ch13.getText().toString());
+                if(ch14.isChecked()) selectedCategories.add(ch14.getText().toString());
+                if(ch15.isChecked()) selectedCategories.add(ch15.getText().toString());
+                if(ch16.isChecked()) selectedCategories.add(ch16.getText().toString());
+
+                adapter.setSelectedCategories(selectedCategories);
+
                 categoryView.setText(result);
                 Toast.makeText(getActivity(),"카테고리를 적용합니다.",Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -132,54 +156,18 @@ public class EcoDetailFragment extends Fragment {
 
         ecoDetailViewFragment = new EcoDetailViewFragment();
 
-
-        //list.add(new Items_Detail("ITEM 2","foreground image","test"));
-
-        // 리스트에 아이템 추가
-        Response.Listener<String> responseListener = new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    boolean success = jsonObject.getBoolean("success");
-
-                    if (success) {
-                        JSONArray locationArray = jsonObject.getJSONArray("locations");
-
-                        for (int i = 0; i < locationArray.length(); i++) {
-                            JSONObject locationObject = locationArray.getJSONObject(i);
-
-                            String title = locationObject.getString("rec_title");
-                            String category = locationObject.getString("rec_category");
-                            String content = locationObject.getString("rec_content");
-
-                            list.add(new Items_Detail(title,category,content));
-
-                            adapter.setItems(list);
-                        }
-
-                        Toast.makeText(getActivity(), "데이터를 성공적으로 불러왔습니다.", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(getActivity(), "데이터를 불러오는데 실패하셨습니다.", Toast.LENGTH_SHORT).show();
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        };
-
-        EcoDetailRequest ecoDetailRequest = new EcoDetailRequest("rec_category", "rec_title", "rec_content", responseListener);
-        RequestQueue queue = Volley.newRequestQueue(getActivity());
-        queue.add(ecoDetailRequest);
-
         // recyclerView, adapter 연결
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        adapter = new TextAdapter_Detail(list);
+        adapter = new TextAdapter_Detail(getActivity(), list);
         recyclerView.setAdapter(adapter);
 
         // 전체 목록 표시 (검색어가 비어있을 때)
-        adapter.setItems(list);
+        //adapter.setItems(list);
+        // 데이터를 가져오는 부분은 한 번만 수행되도록 수정
+        if (list.isEmpty()) {
+            loadData();
+        }
 
         // 검색
         searchView_Detail.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -208,10 +196,50 @@ public class EcoDetailFragment extends Fragment {
                     }
                     adapter.setItems(search_list);
                 }
-                return false;
+
+                // 로그 추가
+                //Log.d("SearchFragment", "Search result: " + search_list.toString());
+                return true;
             }
         });
 
         return view;
+    }
+    // 데이터를 가져오는 메서드
+    private void loadData() {
+        Response.Listener<String> responseListener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    boolean success = jsonObject.getBoolean("success");
+
+                    if (success) {
+                        JSONArray locationArray = jsonObject.getJSONArray("locations");
+
+                        for (int i = 0; i < locationArray.length(); i++) {
+                            JSONObject locationObject = locationArray.getJSONObject(i);
+
+                            String title = locationObject.getString("rec_title");
+                            String category = locationObject.getString("rec_category");
+                            String content = locationObject.getString("rec_content");
+
+                            list.add(new Items_Detail(title, category, content));
+                        }
+
+                        // 아이템이 변경되었음을 어댑터에 알림
+                        adapter.setItems(list);
+                    } else {
+                        Toast.makeText(getActivity(), "데이터를 불러오는데 실패하셨습니다.", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        EcoDetailRequest ecoDetailRequest = new EcoDetailRequest("rec_category", "rec_title", "rec_content", responseListener);
+        RequestQueue queue = Volley.newRequestQueue(getActivity());
+        queue.add(ecoDetailRequest);
     }
 }
