@@ -90,9 +90,11 @@
         android:text="검색결과"
         android:textSize="20dp"
         android:textColor="@color/white" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -103,248 +105,270 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
                 android:background="@drawable/patten02"
-                android:backgroundTint="@color/white">
+                android:backgroundTint="@color/white"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp">
+
                 <TextView
                     android:id="@+id/textView11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/suite_bold"
                     android:text="지성 올바른 천연삼푸바"
-                    android:textSize="20dp"
-                    android:fontFamily="@font/suite_bold"/>
+                    android:textSize="20dp" />
+
                 <TextView
                     android:id="@+id/textView12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
                     android:layout_below="@+id/textView11"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/suite_bold"
                     android:text="뷰티"
-                    android:textColor="#d3d3d3"
-                    android:fontFamily="@font/suite_bold"/>
+                    android:textColor="#d3d3d3" />
+
                 <TextView
                     android:id="@+id/textView13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="10dp"
                     android:layout_below="@+id/textView12"
-                    android:text="동구밭"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
                     android:fontFamily="@font/suite_bold"
-                    android:textColor="@color/MainColorG"/>
+                    android:text="동구밭"
+                    android:textColor="@color/MainColorG" />
+
                 <TextView
                     android:id="@+id/textView14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="10dp"
                     android:layout_below="@+id/textView13"
-                    android:text="고체 순한 삼푸비누 제로웨이스트"
-                    android:fontFamily="@font/suite_bold"/>
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/suite_bold"
+                    android:text="고체 순한 삼푸비누 제로웨이스트" />
+
                 <Button
                     android:id="@+id/detailBtn1"
                     android:layout_width="40dp"
                     android:layout_height="100dp"
-                    android:layout_marginLeft="20dp"
                     android:layout_alignParentRight="true"
+                    android:layout_marginLeft="20dp"
                     android:background="@drawable/patten01"
                     android:backgroundTint="@color/MainColorY"
-                    android:text=">"/>
+                    android:text=">" />
             </RelativeLayout>
             <!--결과물 둘-->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
                 android:background="@drawable/patten02"
-                android:backgroundTint="@color/white">
+                android:backgroundTint="@color/white"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp">
+
                 <ImageView
                     android:id="@+id/ImgView2"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:background="@drawable/eco_melixir1_1"/>
+                    android:background="@drawable/eco_melixir1_1" />
+
                 <TextView
                     android:id="@+id/textView21"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/ImgView2"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@+id/ImgView2"
-                    android:layout_alignTop="@+id/ImgView2"
+                    android:fontFamily="@font/suite_bold"
                     android:text="지성 올바른 천연삼푸바"
-                    android:textSize="20dp"
-                    android:fontFamily="@font/suite_bold"/>
+                    android:textSize="20dp" />
+
                 <TextView
                     android:id="@+id/textView22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView21"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@+id/ImgView2"
-                    android:layout_below="@+id/textView21"
+                    android:fontFamily="@font/suite_bold"
                     android:text="뷰티"
-                    android:textColor="#d3d3d3"
-                    android:fontFamily="@font/suite_bold"/>
+                    android:textColor="#d3d3d3" />
+
                 <TextView
                     android:id="@+id/textView23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_toRightOf="@+id/ImgView2"
                     android:layout_below="@+id/textView22"
-                    android:text="동구밭"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/ImgView2"
                     android:fontFamily="@font/suite_bold"
-                    android:textColor="@color/MainColorG"/>
+                    android:text="동구밭"
+                    android:textColor="@color/MainColorG" />
+
                 <TextView
                     android:id="@+id/textView24"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_toRightOf="@+id/ImgView2"
                     android:layout_below="@+id/textView23"
-                    android:text="고체 순한 삼푸비누 제로웨이스트"
-                    android:fontFamily="@font/suite_bold"/>
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/ImgView2"
+                    android:fontFamily="@font/suite_bold"
+                    android:text="고체 순한 삼푸비누 제로웨이스트" />
+
                 <Button
                     android:id="@+id/detailBtn2"
                     android:layout_width="40dp"
                     android:layout_height="100dp"
-                    android:layout_marginLeft="20dp"
                     android:layout_alignParentRight="true"
+                    android:layout_marginLeft="20dp"
                     android:background="@drawable/patten01"
                     android:backgroundTint="@color/MainColorY"
-                    android:text=">"/>
+                    android:text=">" />
             </RelativeLayout>
             <!--결과물 셋-->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
                 android:background="@drawable/patten02"
-                android:backgroundTint="@color/white">
+                android:backgroundTint="@color/white"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp">
+
                 <TextView
                     android:id="@+id/textView31"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/suite_bold"
                     android:text="지성 올바른 천연삼푸바"
-                    android:textSize="20dp"
-                    android:fontFamily="@font/suite_bold"/>
+                    android:textSize="20dp" />
+
                 <TextView
                     android:id="@+id/textView32"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
                     android:layout_below="@+id/textView31"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/suite_bold"
                     android:text="뷰티"
-                    android:textColor="#d3d3d3"
-                    android:fontFamily="@font/suite_bold"/>
+                    android:textColor="#d3d3d3" />
+
                 <TextView
                     android:id="@+id/textView33"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="10dp"
                     android:layout_below="@+id/textView32"
-                    android:text="동구밭"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
                     android:fontFamily="@font/suite_bold"
-                    android:textColor="@color/MainColorG"/>
+                    android:text="동구밭"
+                    android:textColor="@color/MainColorG" />
+
                 <TextView
                     android:id="@+id/textView34"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="10dp"
                     android:layout_below="@+id/textView33"
-                    android:text="고체 순한 삼푸비누 제로웨이스트"
-                    android:fontFamily="@font/suite_bold"/>
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/suite_bold"
+                    android:text="고체 순한 삼푸비누 제로웨이스트" />
+
                 <Button
                     android:id="@+id/detailBtn3"
                     android:layout_width="40dp"
                     android:layout_height="100dp"
-                    android:layout_marginLeft="20dp"
                     android:layout_alignParentRight="true"
+                    android:layout_marginLeft="20dp"
                     android:background="@drawable/patten01"
                     android:backgroundTint="@color/MainColorY"
-                    android:text=">"/>
+                    android:text=">" />
             </RelativeLayout>
             <!--결과물 넷-->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
                 android:background="@drawable/patten02"
-                android:backgroundTint="@color/white">
+                android:backgroundTint="@color/white"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp">
+
                 <ImageView
                     android:id="@+id/ImgView4"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:background="@drawable/eco_morestore1_1"/>
+                    android:background="@drawable/eco_morestore1_1" />
+
                 <TextView
                     android:id="@+id/textView41"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/ImgView4"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@+id/ImgView4"
-                    android:layout_alignTop="@+id/ImgView4"
+                    android:fontFamily="@font/suite_bold"
                     android:text="지성 올바른 천연삼푸바"
-                    android:textSize="20dp"
-                    android:fontFamily="@font/suite_bold"/>
+                    android:textSize="20dp" />
+
                 <TextView
                     android:id="@+id/textView42"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView41"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@+id/ImgView4"
-                    android:layout_below="@+id/textView41"
+                    android:fontFamily="@font/suite_bold"
                     android:text="뷰티"
-                    android:textColor="#d3d3d3"
-                    android:fontFamily="@font/suite_bold"/>
+                    android:textColor="#d3d3d3" />
+
                 <TextView
                     android:id="@+id/textView43"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_toRightOf="@+id/ImgView4"
                     android:layout_below="@+id/textView42"
-                    android:text="동구밭"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/ImgView4"
                     android:fontFamily="@font/suite_bold"
-                    android:textColor="@color/MainColorG"/>
+                    android:text="동구밭"
+                    android:textColor="@color/MainColorG" />
+
                 <TextView
                     android:id="@+id/textView44"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_toRightOf="@+id/ImgView4"
                     android:layout_below="@+id/textView43"
-                    android:text="고체 순한 삼푸비누 제로웨이스트"
-                    android:fontFamily="@font/suite_bold"/>
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/ImgView4"
+                    android:fontFamily="@font/suite_bold"
+                    android:text="고체 순한 삼푸비누 제로웨이스트" />
+
                 <Button
                     android:id="@+id/detailBtn4"
                     android:layout_width="40dp"
                     android:layout_height="100dp"
-                    android:layout_marginLeft="20dp"
                     android:layout_alignParentRight="true"
+                    android:layout_marginLeft="20dp"
                     android:background="@drawable/patten01"
                     android:backgroundTint="@color/MainColorY"
-                    android:text=">"/>
+                    android:text=">" />
             </RelativeLayout>
 
 

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="15dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="15dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:background="@drawable/patten02"
+    android:backgroundTint="@color/white">
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="화분"
+        android:textSize="20dp"
+        android:fontFamily="@font/suite_bold"/>
+
+    <TextView
+        android:id="@+id/text_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/text_title"
+        android:layout_alignBottom="@+id/text_title"
+        android:text="일반쓰레기"
+        android:textColor="#d3d3d3"
+        android:fontFamily="@font/suite_bold"/>
+
+    <TextView
+        android:id="@+id/text_content"
+        android:layout_width="430dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/text_title"
+        android:text="흙은 오염되지 않은 경우 화단 통에 버려도 되지만 아파트 화단 등 특수한 경우 가능하지 않을 수 있으므로 따로 확인이 필요합니다."
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:fontFamily="@font/suite_bold"/>
+
+    <Button
+        android:id="@+id/detailBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/text_content"
+        android:layout_alignBottom="@+id/text_content"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/patten01"
+        android:backgroundTint="@color/MainColorY"
+        android:text="더보기"/>
+
+</RelativeLayout>

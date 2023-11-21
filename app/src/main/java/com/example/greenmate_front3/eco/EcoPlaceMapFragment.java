@@ -31,6 +31,9 @@ public class EcoPlaceMapFragment extends Fragment implements MapView.POIItemEven
     public ViewGroup mapViewContainer;
     TextView addressText;
 
+    String area_state = "경상북도";   // 가져온 Extars 중에서 꺼내기
+    String area_city = "안동시";
+
     public EcoPlaceMapFragment() {
         // Required empty public constructor
     }
@@ -50,8 +53,12 @@ public class EcoPlaceMapFragment extends Fragment implements MapView.POIItemEven
         // 테스트 (텍스트 띄우기)
         addressText = view.findViewById(R.id.addressText);
 
-        String area_state = "경상북도";   // 가져온 Extars 중에서 꺼내기
-        String area_city = "안동시";
+
+        if (getArguments() != null)
+        {
+            area_state = getArguments().getString("state"); // 프래그먼트1에서 받아온 값 넣기
+            area_city = getArguments().getString("city"); // 프래그먼트1에서 받아온 값 넣기
+        }
 
         // <지도 띄우기----------------------------------------------------
         mapView = new MapView(getActivity());

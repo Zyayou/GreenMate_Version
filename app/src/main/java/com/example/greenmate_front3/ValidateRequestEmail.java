@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ValidateRequestEmail extends StringRequest{
-    final static  private String URL="http://192.168.0.36/UserValidateEmail.php";
+    final static  private String URL="http://192.168.0.32/UserValidateEmail.php";
     private Map<String, String> map;
 
     public ValidateRequestEmail(String m_email, Response.Listener<String> listener){

@@ -31,7 +31,6 @@
         android:layout_marginLeft="70dp"
         android:paddingTop="5dp"
         android:textAlignment="center"
-        android:entries="@array/city_gb"
         android:drawSelectorOnTop="true"
         android:background="@drawable/patten01"
         android:backgroundTint="@color/white"
@@ -98,7 +97,8 @@
         android:text="자세한 쓰레기장 위치 보기"
         android:textSize="20dp"
         android:fontFamily="@font/suite_bold"
-        android:textColor="@color/white" />
-    <!-- 비져빌리티 추가됨-->
+        android:textColor="@color/white"
+        />
+    <!-- 비져빌리티 추가?-->
 
 </RelativeLayout>

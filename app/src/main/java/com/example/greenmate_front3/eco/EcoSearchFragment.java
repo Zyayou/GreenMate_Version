@@ -49,6 +49,7 @@ public class EcoSearchFragment extends Fragment{
 
                 categoryView.setText(result);
                 Toast.makeText(getActivity(),"카테고리를 적용합니다.",Toast.LENGTH_SHORT).show();
+
             }
         });
 
