@@ -10,7 +10,7 @@ import java.util.Map;
 public class QuizSelectRequest extends StringRequest {
 
     //서버 URL 설정(php 파일 연동)
-    final static private String URL = "http://192.168.0.32/SelectQuiz.php";
+    final static private String URL = "http://192.168.0.191/SelectQuiz.php";
     private Map<String, String> map;
     //private Map<String, String>parameters;
 

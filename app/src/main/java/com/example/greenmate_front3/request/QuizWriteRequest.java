@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class QuizWriteRequest extends StringRequest {
 
-    final static private String URL = "http://192.168.0.32/WriteQuiz.php";
+    final static private String URL = "http://192.168.0.191/WriteQuiz.php";
     private Map<String, String> map;
 
     public QuizWriteRequest(String m_id, String q_state, Response.Listener<String> listener) {

@@ -11,7 +11,7 @@ import java.util.Map;
 // 수정 필요!
 public class ValidateRequest extends StringRequest {
     //서버 url 설정(php파일 연동)
-    final static  private String URL="http://192.168.0.32/UserValidate.php";
+    final static  private String URL="http://192.168.0.191/UserValidate.php";
     private Map<String, String> map;
 
     public ValidateRequest(String m_id, Response.Listener<String> listener){

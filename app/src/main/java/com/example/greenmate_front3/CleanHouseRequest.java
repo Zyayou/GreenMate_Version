@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CleanHouseRequest extends StringRequest {
-    final static private String URL = "http://192.168.0.32/cleanhouse.php";
+    final static private String URL = "http://192.168.0.191/cleanhouse.php";
     private Map<String, String> map;
 
     public CleanHouseRequest(String cle_state, String cle_city, Response.Listener<String> listener) {

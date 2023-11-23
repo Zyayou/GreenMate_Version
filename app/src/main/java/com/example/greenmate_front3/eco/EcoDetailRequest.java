@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class EcoDetailRequest extends StringRequest {
 
-    final static private String URL = "http://192.168.0.32/resDetail.php";
+    final static private String URL = "http://192.168.0.191/resDetail.php";
     private Map<String, String> map;
 
     public EcoDetailRequest(String rec_category, String rec_title, String rec_content, Response.Listener<String> listener) {

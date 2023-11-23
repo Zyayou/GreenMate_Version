@@ -12,7 +12,7 @@ import java.util.Map;
 public class RegisterRequest extends StringRequest {
 
     //서버 URL 설정(php 파일 연동)
-    final static private String URL = "http://192.168.0.32/Register.php";
+    final static private String URL = "http://192.168.0.191/Register.php";
     private Map<String, String> map;
     //private Map<String, String>parameters;
 

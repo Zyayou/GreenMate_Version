@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class QuizCorrectRequest extends StringRequest {
-    final static private String URL = "http://192.168.0.32/CorrectQuiz.php";
+    final static private String URL = "http://192.168.0.191/CorrectQuiz.php";
     private Map<String, String> map;
 
     public QuizCorrectRequest(String m_id, Response.Listener<String> listener) {
